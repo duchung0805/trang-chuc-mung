@@ -1,0 +1,34 @@
+from moviepy.editor import *
+from PIL import Image
+
+# Dùng lại video đã dựng (không cần upload YouTube cho bước này)
+video_path = "/mnt/data/trang_hung_lofi_video.mp4"
+qr_image_path = "/mnt/data/qr_album_love.png"  # mã QR tạm (sẽ thay link thật nếu có)
+
+# Tạo clip video gốc
+base_clip = VideoFileClip(video_path)
+
+# Tạo clip QR code nhỏ đặt góc dưới phải
+qr_img = (ImageClip(qr_image_path)
+          .set_duration(base_clip.duration)
+          .resize(height=150)  # nhỏ lại để không che mất ảnh
+          .set_position(("right", "bottom"))
+          .margin(right=20, bottom=20, opacity=0))  # thêm khoảng cách
+
+# Tạo chữ bay đẹp
+text_clip = (TextClip("1/6 vui vẻ nhé cậu\nTrang ♥ Hùng",
+                      fontsize=60,
+                      color='white',
+                      font='Arial-Bold')
+             .set_duration(base_clip.duration)
+             .set_position("center")
+             .fadein(1).fadeout(1))
+
+# Ghép tất cả lại
+final_clip = CompositeVideoClip([base_clip, qr_img, text_clip])
+
+# Xuất video hoàn chỉnh
+final_output_path = "/mnt/data/video_qr_yeu_tranghung.mp4"
+final_clip.write_videofile(final_output_path, codec="libx264", audio_codec="aac", fps=24)
+
+final_output_path
