@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng Trang 1/6</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      overflow: hidden;
+      font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Quicksand', 'Arial', sans-serif;
+      background: black;
+    }
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .chu-tinh {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background: rgba(255, 105, 180, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+      z-index: 5;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
+    }
+    .slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chu-tinh">💖 Chúc Trang 1/6 tràn ngập yêu thương 💖</div>
+
+<img id="slideshow" class="slideshow" src="" alt="Slideshow">
+
+<script src="https://cdn.jsdelivr.net/gh/hnq90/heart-animation/heart-animation.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/nhaccuahuong/js@main/chukhonggian.js"></script>
+<script>
+const Jansharenoidung = [
+    "🎉 Chúc Trang ngày 1/6 thật vui vẻ!",
+    "💖 Cô gái của anh luôn đáng yêu nhất",
+    "🍬 Trang là món quà ngọt ngào nhất",
+    "🌸 1/6 là ngày dành riêng cho em",
+    "💫 Anh may mắn vì có em bên đời",
+    "☀️ Trang cười là cả thế giới tỏa sáng",
+    "💕 Anh sẽ luôn ở đây vì em",
+    "✨ Trang là ánh sáng của anh",
+    "🥰 Chúc em tuổi mới thêm yêu đời",
+    "🍭 Em đáng yêu hơn cả 1000 viên kẹo",
+    "👼 Trang là thiên thần của riêng anh",
+    "💝 1/6 - Chúc Trang luôn hạnh phúc"
+];
+</script>
+<script src="https://cdn.jsdelivr.net/gh/nhaccuahuong/js@main/jschuchay.js"></script>
+
+<script>
+const imgs = [
+  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRRm6I94-NAM9N85GtZsT8pIm7myucFzkCrQ_Tl3AIZgl1vGFZv1Mrs0DNiRv9aVXYsYeCYN7wD8O4JE5OwI3Vu2fIUR03YjHuwjlNwubOjxcF6mGgvpgVepr7ILqaV-Kfmsu0epE_nBe9VKWlPHOjCbnLM3itbpXgXLO9deoFVMJECAqIxtVvYEx29jo/s1280/z6660619347491_6d23f7a02c4da3597c2cdd96acb4c562.jpg",
+  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpW4fdn37ZS0PVe1f2e-BGdSQxjGAoyA18D8YvN3BjMJbCblqbw2T4yv4ViQGUVgpk1rl_-xVxC85Bl8N72I_evQFnNjsekDiaMIQhD86C3mP5IHBeDypDTwmcykxY5W953cc8q3O1WaEUMFiPDbaiDIK86LF6AVymg8VBAXlo2MxxHaxL_iw99_61rpE/s1280/z6660619352040_6140f5bfb9c952f33f3d068aebda93fc.jpg",
+  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiP3Ak06rEF4KHM_D3Zh7TkPQoWEEKJmRXQrwNzGn2cPKzSM4K74rog87QIEVanSv9ayPrlvQB5QJ4K2IyB2W1QpOPTvUzD4wKfaqy0iF4XINeI_TN6l-QQgQJUoHgx7EKV_E-bjukqDNbUAOfKSL2pFh0XxEiYs-Gj0ByLb6Q_nnzwRgaaatpm9i8S-Y/s1280/z6660619357760_90913ff79ea449f66e55f0a0fbbecdbc.jpg",
+  "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfDh1hh4Lsd65RTAtQE27dwwd9gFY-gg-gUPZ0OMquVdcqQDIYf5AeRnviZp0HsQhgxm216a6BsQ6xR-UsHcLc6Lv5_cMVRiK1o8Sv0lScrJVyLu3klmZ_OwmPh31QXsM0bTpJDvjTtQoMrTmOpixkEDycT8xCJ5PcJADL8PD20161pzxRhgRGENfuq44/s1280/z6660619361033_a16d2582571c2c59883cb053f70392c8.jpg"
+];
+let current = 0;
+const slideshow = document.getElementById('slideshow');
+function changeImage() {
+  slideshow.src = imgs[current];
+  current = (current + 1) % imgs.length;
+}
+changeImage();
+setInterval(changeImage, 4000);
+</script>
+
+</body>
+</html>
